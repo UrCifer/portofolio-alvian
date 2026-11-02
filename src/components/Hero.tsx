@@ -25,7 +25,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
-              Mahasiswa/Lulusan Informatika di <strong className="text-zinc-900 dark:text-zinc-200 font-medium">Universitas Mercu Buana Jakarta</strong> yang berfokus pada <strong className="text-zinc-900 dark:text-zinc-200 font-medium">Frontend Web Development</strong> dan <strong className="text-zinc-900 dark:text-zinc-200 font-medium">UI/UX Design</strong>. Saya merancang antarmuka yang responsif serta mengembangkan website menggunakan teknologi web modern agar fungsional dan nyaman digunakan.
+              Mahasiswa/Lulusan Informatika di <strong className="text-zinc-900 dark:text-zinc-200 font-medium">Universitas Mercu Buana Jakarta</strong> yang berfokus pada <strong className="text-zinc-900 dark:text-zinc-200 font-medium">Frontend Web Development</strong> dan <strong className="text-zinc-900 dark:text-zinc-200 font-medium">UI/UX Design</strong>, serta memiliki pengalaman dalam <strong className="text-zinc-900 dark:text-zinc-200 font-medium">Project Management</strong>. Saya merancang antarmuka yang responsif serta mengembangkan website menggunakan teknologi web modern agar fungsional dan nyaman digunakan.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-zinc-500">
@@ -36,7 +36,7 @@ export default function Hero() {
               <span>·</span>
               <span>Universitas Mercu Buana</span>
               <span>·</span>
-              <span>Frontend Web &amp; UI/UX</span>
+              <span>Frontend Web, UI/UX &amp; Project Management</span>
             </div>
 
             {/* CTA Buttons */}

@@ -26,7 +26,8 @@ export default function About() {
 
               <p className="text-zinc-600 dark:text-zinc-400">
                 Saya berfokus pada <strong className="text-zinc-900 dark:text-zinc-200 font-medium">Frontend Web Development</strong> dan{' '}
-                <strong className="text-zinc-900 dark:text-zinc-200 font-medium">UI/UX Design</strong>. Saya berpengalaman dalam merancang antarmuka yang bersih serta membangun aplikasi website responsif menggunakan HTML, CSS, JavaScript, dan ekosistem web modern—mengubah ide dan desain menjadi produk digital yang fungsional, interaktif, dan mudah digunakan.
+                <strong className="text-zinc-900 dark:text-zinc-200 font-medium">UI/UX Design</strong>, serta memiliki pengalaman dalam{' '}
+                <strong className="text-zinc-900 dark:text-zinc-200 font-medium">Project Management</strong>. Saya berpengalaman dalam merancang antarmuka yang bersih serta membangun aplikasi website responsif menggunakan HTML, CSS, JavaScript, dan ekosistem web modern—mengubah ide dan desain menjadi produk digital yang fungsional, interaktif, dan mudah digunakan.
               </p>
 
               <p className="text-zinc-600 dark:text-zinc-400">
@@ -69,7 +70,7 @@ export default function About() {
                   <span>Fokus Utama</span>
                 </div>
                 <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  Frontend Web Development (HTML, CSS, JavaScript, React) serta UI/UX Design di Figma.
+                  Frontend Web Development (HTML, CSS, JavaScript, React), UI/UX Design di Figma, serta Project Management.
                 </p>
               </div>
 

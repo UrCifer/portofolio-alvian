@@ -15,6 +15,7 @@ export interface Project {
   title: string
   platform: string
   highlightTag?: string
+  isOngoing?: boolean
   category: 'E-Commerce' | 'Aplikasi Web' | 'Sistem Informasi Web'
   role: string
   organization: string
@@ -142,21 +143,23 @@ const ALL_PROJECTS: Project[] = [
     id: 'erp-alritek',
     title: 'ERP System — Website Inventori & Master Data Gudang',
     platform: 'Aplikasi Berbasis Web',
-    highlightTag: '🏢 Sistem ERP Gudang Industri',
+    highlightTag: '🏢 Sistem ERP Gudang · On-Going',
+    isOngoing: true,
     category: 'Sistem Informasi Web',
-    role: 'Frontend & Web Developer',
+    role: 'Project Manager & Frontend Developer',
     organization: 'PT Alritek Equipindo Jaya',
     description:
-      'Sistem ERP internal berbasis web untuk PT Alritek Equipindo Jaya (spesialis forklift attachments). Menggantikan pencatatan manual menjadi sistem web terpusat untuk katalog master data sparepart mesin, monitoring stok gudang, dan alur pemesanan secara akurat.',
+      'Sistem ERP internal berbasis web untuk PT Alritek Equipindo Jaya (spesialis forklift attachments). Proyek ini berstatus On-Going (sedang dalam tahap pengerjaan aktif) di mana saya berperan ganda sebagai Project Manager dan Frontend Developer untuk memodernisasi master data inventori suku cadang, pelacakan stok gudang real-time, dan alur pemesanan secara tersentralisasi.',
     details: [
-      'Membangun antarmuka dashboard inventori berbasis web responsif dengan HTML, CSS, dan Tailwind CSS.',
+      'Memimpin alur proyek (Project Manager): merumuskan backlog, pembagian modul fungsional, dan koordinasi pengembangan sistem.',
+      'Membangun antarmuka dashboard inventori berbasis web responsif dengan HTML, CSS, dan Tailwind CSS sebagai Frontend Developer.',
       'Modul Master Data suku cadang dengan fitur pencarian cepat dan sistem notifikasi stok menipis (Low Stock Alert).',
       'Backend Laravel (PHP) dan skrip Python untuk pengolahan data inventori, kalkulasi pergerakan stok, dan laporan berkala.',
-      'Penyimpanan database MySQL untuk menjaga konsistensi transaksi stok masuk dan keluar.',
+      'Status Proyek: On-Going (sedang dalam tahap pengembangan aktif untuk kebutuhan industri PT Alritek).',
     ],
     frontendTech: ['HTML', 'CSS', 'JavaScript', 'Tailwind CSS'],
     backendTech: ['Python', 'PHP', 'Laravel', 'MySQL'],
-    technologies: ['HTML', 'CSS', 'JavaScript', 'Tailwind CSS', 'Python', 'PHP', 'Laravel', 'MySQL'],
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Tailwind CSS', 'Python', 'PHP', 'Laravel', 'MySQL', 'Project Management'],
     accentColor: '#10b981',
   },
   {
@@ -263,18 +266,22 @@ export default function Projects() {
                       </div>
                     ) : (
                       /* Fallback visual for Alritek projects without uploaded screenshots */
-                      <div className="w-full h-full p-5 flex flex-col justify-between font-mono text-xs bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-950">
-                        <div className="flex items-center justify-between text-zinc-500 text-[11px] border-b border-zinc-200 dark:border-zinc-800 pb-2">
-                          <span className="text-zinc-600 dark:text-zinc-400">
-                            {project.id === 'erp-alritek' ? 'ALRITEK ERP · INVENTORY' : 'SPK SAW · DECISION ENGINE'}
-                          </span>
-                          <span className="text-emerald-600 dark:text-emerald-400">● Web Application</span>
-                        </div>
-                        <div className="p-3 rounded-xl bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 space-y-1">
-                          <span className="text-zinc-900 dark:text-zinc-200 block font-semibold">{project.title}</span>
+                      <div className="w-full h-full pt-14 p-5 flex flex-col justify-between font-mono text-xs bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900/90 dark:to-zinc-950">
+                        <div className="p-3.5 rounded-2xl bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 shadow-xs space-y-1">
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="text-zinc-900 dark:text-zinc-200 block font-semibold text-xs truncate">
+                              {project.title}
+                            </span>
+                            <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-mono flex-shrink-0">
+                              ● Active
+                            </span>
+                          </div>
                           <span className="text-[11px] text-zinc-500 dark:text-zinc-400 block">{project.organization}</span>
                         </div>
-                        <span className="text-[10px] text-zinc-500">HTML · CSS · Python · PHP · MySQL</span>
+                        <div className="flex items-center justify-between text-[11px] text-zinc-500 pt-1 border-t border-zinc-200/60 dark:border-zinc-800/60">
+                          <span className="truncate max-w-[200px]">{project.role}</span>
+                          <span className="text-sky-600 dark:text-sky-400 font-mono flex-shrink-0">Web-Based</span>
+                        </div>
                       </div>
                     )}
 
@@ -288,6 +295,16 @@ export default function Projects() {
                         {project.category}
                       </span>
                     </div>
+
+                    {/* On-Going Badge (Top Right) */}
+                    {project.isOngoing && (
+                      <div className="absolute top-3 right-3 z-10">
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-500 dark:text-amber-400 text-[11px] font-mono border border-amber-500/30 backdrop-blur-md shadow-sm font-medium">
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                          <span>On-Going</span>
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Text Content */}

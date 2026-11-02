@@ -13,7 +13,7 @@ import {
   CssIcon,
   PythonIcon,
 } from '@/components/Icons'
-import { Video, Code, Palette, Database } from 'lucide-react'
+import { Terminal, Code, Palette, Database } from 'lucide-react'
 import { useScrollReveal } from '@/hooks/useScrollEffects'
 
 export default function Skills() {
@@ -113,10 +113,10 @@ export default function Skills() {
               </ul>
             </div>
 
-            {/* Workflow & Media */}
+            {/* Workflow & Tools */}
             <div className="p-6 rounded-3xl bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 space-y-4 shadow-sm">
               <div className="flex items-center gap-2.5 text-zinc-900 dark:text-zinc-200 font-semibold text-sm">
-                <Video className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+                <Terminal className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                 <span>Tools &amp; Workflow</span>
               </div>
               <ul className="space-y-2.5 text-xs text-zinc-600 dark:text-zinc-400">
@@ -129,7 +129,7 @@ export default function Skills() {
                   <span>Vite Build Tool</span>
                 </li>
                 <li>VS Code Editor</li>
-                <li>Video Editing &amp; Content Creation</li>
+                <li>Project Management &amp; Scrum Basics</li>
               </ul>
             </div>
 

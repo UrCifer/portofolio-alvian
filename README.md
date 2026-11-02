@@ -1,6 +1,6 @@
 # Alvian Eka Pratama — Portofolio Personal
 
-Website portofolio personal resmi **Alvian Eka Pratama**, mahasiswa/lulusan Informatika di **Universitas Mercu Buana Jakarta** dengan fokus pada **UI/UX Design**, **Front-End Development**, dan **Web Development**.
+Website portofolio personal resmi **Alvian Eka Pratama**, mahasiswa/lulusan Informatika di **Universitas Mercu Buana Jakarta** dengan fokus pada **Frontend Web Development**, **UI/UX Design**, serta pengalaman dalam **Project Management**.
 
 Dibuat secara autentik, bersih, bersahabat, dan bebas dari istilah buatan AI yang berlebihan.
 
@@ -23,8 +23,9 @@ Dibuat secara autentik, bersih, bersahabat, dan bebas dari istilah buatan AI yan
 5. **SIA — Website Portal Pengisian KRS Mahasiswa (Universitas Mercu Buana)**:
    - Sistem Informasi Akademik (SIA) berbasis web untuk portal pengisian KRS mahasiswa lengkap dengan modul login web, overview semester aktif (IPK 3.75, 90 SKS), dan tabel pemilihan mata kuliah.
    - **Frontend**: HTML, CSS, JavaScript | **Backend**: Python, PHP, MySQL
-6. **ERP System — Website Inventori & Master Data Gudang (PT Alritek Equipindo Jaya)**:
-   - Sistem ERP internal berbasis web untuk master data sparepart mesin, pelacakan stok inventori, dan pemesanan supplier di lingkungan industri.
+6. **ERP System — Website Inventori & Master Data Gudang (PT Alritek Equipindo Jaya - On-Going)**:
+   - Sistem ERP internal berbasis web untuk master data sparepart mesin, pelacakan stok inventori, dan alur pemesanan secara tersentralisasi. Berstatus *On-Going* (pengembangan aktif).
+   - **Peran**: Project Manager & Frontend Developer
    - **Frontend**: HTML, CSS, JavaScript, Tailwind CSS | **Backend**: Python, PHP, Laravel, MySQL
 7. **SPK SAW — Website Pemilihan Karyawan Terbaik & Analisis Sensitivitas (PT Alritek Equipindo Jaya)**:
    - Aplikasi Sistem Pendukung Keputusan (SPK) berbasis web dengan modul simulasi interaktif Analisis Sensitivitas bobot kriteria (Kerajinan C1 50%, Kehadiran C2 40%, Lembur C3 10%), perbandingan ranking dinamis real-time, dan penetapan karyawan terbaik.
