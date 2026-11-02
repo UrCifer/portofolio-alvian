@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { ArrowUpRight, X, Eye, Globe, Code2, Server, MessageCircle } from 'lucide-react'
+import { ArrowUpRight, X, Eye, Globe, Code2, Server } from 'lucide-react'
+import { LinkedinIcon } from '@/components/Icons'
 import { useScrollReveal } from '@/hooks/useScrollEffects'
 
 import krempeImg from '@/assets/projects/krempe.jpg'
@@ -193,35 +194,35 @@ export default function Projects() {
     : ALL_PROJECTS.filter((p) => p.category === filter)
 
   return (
-    <section id="projects" className="py-24 border-t border-zinc-800/80">
+    <section id="projects" className="py-24 border-t border-zinc-200 dark:border-zinc-800/80">
       <div className="max-w-5xl mx-auto px-6 sm:px-8">
         <div ref={ref} className={`reveal-on-scroll ${isVisible ? 'is-visible' : ''}`}>
           
           {/* Header & Filter */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-950/50 border border-sky-800/60 text-sky-300 text-xs font-medium mb-3">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 dark:bg-sky-950/50 border border-sky-200 dark:border-sky-800/60 text-sky-700 dark:text-sky-300 text-xs font-medium mb-3">
                 <Globe className="w-3.5 h-3.5" />
                 <span>100% Berbasis Web (Web-Based Applications)</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-zinc-100 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight">
                 My Projects
               </h2>
-              <p className="text-sm text-zinc-400 mt-2 max-w-lg">
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-2 max-w-lg">
                 Kumpulan proyek website dan aplikasi berbasis web yang telah saya rancang dan kembangkan untuk berbagai kebutuhan nyata.
               </p>
             </div>
 
             {/* Filter Tabs */}
-            <div className="flex flex-wrap items-center gap-1.5 p-1 bg-zinc-900 rounded-2xl border border-zinc-800 text-xs">
+            <div className="flex flex-wrap items-center gap-1.5 p-1 bg-zinc-100 dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 text-xs">
               {(['All', 'E-Commerce', 'Aplikasi Web', 'Sistem Informasi Web'] as const).map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setFilter(cat)}
                   className={`px-3 py-1.5 rounded-xl transition-all cursor-pointer ${
                     filter === cat
-                      ? 'bg-zinc-800 text-white font-medium shadow-sm'
-                      : 'text-zinc-400 hover:text-zinc-200'
+                      ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white font-medium shadow-sm'
+                      : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200'
                   }`}
                 >
                   {cat === 'All' ? 'Semua Proyek' : cat}
@@ -235,11 +236,11 @@ export default function Projects() {
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="group rounded-3xl bg-zinc-900/60 border border-zinc-800 hover:border-zinc-700 transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                className="group rounded-3xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md"
               >
                 <div>
                   {/* Real Project Image Preview Frame */}
-                  <div className="relative aspect-[16/10] bg-[#0c0d0e] border-b border-zinc-800 overflow-hidden">
+                  <div className="relative aspect-[16/10] bg-zinc-100 dark:bg-[#0c0d0e] border-b border-zinc-200 dark:border-zinc-800 overflow-hidden">
                     {project.image ? (
                       <div className="relative w-full h-full overflow-hidden">
                         <img
@@ -247,7 +248,7 @@ export default function Projects() {
                           alt={project.title}
                           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 dark:from-zinc-950/70 via-transparent to-transparent pointer-events-none" />
                         
                         {/* Hover Overlay Button */}
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -262,16 +263,16 @@ export default function Projects() {
                       </div>
                     ) : (
                       /* Fallback visual for Alritek projects without uploaded screenshots */
-                      <div className="w-full h-full p-5 flex flex-col justify-between font-mono text-xs bg-gradient-to-br from-zinc-900 to-zinc-950">
-                        <div className="flex items-center justify-between text-zinc-500 text-[11px] border-b border-zinc-800 pb-2">
-                          <span className="text-zinc-400">
+                      <div className="w-full h-full p-5 flex flex-col justify-between font-mono text-xs bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-950">
+                        <div className="flex items-center justify-between text-zinc-500 text-[11px] border-b border-zinc-200 dark:border-zinc-800 pb-2">
+                          <span className="text-zinc-600 dark:text-zinc-400">
                             {project.id === 'erp-alritek' ? 'ALRITEK ERP · INVENTORY' : 'SPK SAW · DECISION ENGINE'}
                           </span>
-                          <span className="text-emerald-400">● Web Application</span>
+                          <span className="text-emerald-600 dark:text-emerald-400">● Web Application</span>
                         </div>
-                        <div className="p-3 rounded-xl bg-zinc-900/80 border border-zinc-800 space-y-1">
-                          <span className="text-zinc-200 block font-semibold">{project.title}</span>
-                          <span className="text-[11px] text-zinc-400 block">{project.organization}</span>
+                        <div className="p-3 rounded-xl bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 space-y-1">
+                          <span className="text-zinc-900 dark:text-zinc-200 block font-semibold">{project.title}</span>
+                          <span className="text-[11px] text-zinc-500 dark:text-zinc-400 block">{project.organization}</span>
                         </div>
                         <span className="text-[10px] text-zinc-500">HTML · CSS · Python · PHP · MySQL</span>
                       </div>
@@ -283,7 +284,7 @@ export default function Projects() {
                         <Globe className="w-3 h-3 text-sky-400" />
                         <span>Aplikasi Web</span>
                       </span>
-                      <span className="px-2 py-1 rounded-full bg-zinc-950/80 text-zinc-300 text-[11px] font-mono border border-white/10 backdrop-blur-md">
+                      <span className="px-2 py-1 rounded-full bg-zinc-950/80 text-zinc-200 text-[11px] font-mono border border-white/10 backdrop-blur-md">
                         {project.category}
                       </span>
                     </div>
@@ -294,51 +295,51 @@ export default function Projects() {
                     <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-zinc-500 mb-2">
                       <span>{project.organization}</span>
                       {project.highlightTag && (
-                        <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-zinc-800/90 text-sky-300 border border-zinc-700/60 font-medium">
+                        <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-sky-50 dark:bg-zinc-800/90 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-zinc-700/60 font-medium">
                           {project.highlightTag}
                         </span>
                       )}
                     </div>
 
-                    <h3 className="text-xl font-semibold text-zinc-100 group-hover:text-white transition-colors">
+                    <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-sky-600 dark:group-hover:text-white transition-colors">
                       {project.title}
                     </h3>
                     
-                    <p className="text-xs text-sky-400 font-mono mt-1 mb-3">
+                    <p className="text-xs text-sky-600 dark:text-sky-400 font-mono mt-1 mb-3">
                       Peran: {project.role}
                     </p>
 
-                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed line-clamp-3 mb-4">
+                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-3 mb-4">
                       {project.description}
                     </p>
 
                     {/* Stack Summary Pills */}
-                    <div className="space-y-1.5 pt-2 border-t border-zinc-800/60 text-[11px] font-mono">
-                      <div className="flex items-center gap-1.5 text-zinc-400">
-                        <span className="text-zinc-500 w-16">Frontend:</span>
-                        <span className="text-zinc-300">{project.frontendTech.join(', ')}</span>
+                    <div className="space-y-1.5 pt-2 border-t border-zinc-100 dark:border-zinc-800/60 text-[11px] font-mono">
+                      <div className="flex items-center gap-1.5 text-zinc-500">
+                        <span className="w-16">Frontend:</span>
+                        <span className="text-zinc-800 dark:text-zinc-300">{project.frontendTech.join(', ')}</span>
                       </div>
-                      <div className="flex items-center gap-1.5 text-zinc-400">
-                        <span className="text-zinc-500 w-16">Backend:</span>
-                        <span className="text-emerald-400">{project.backendTech.join(', ')}</span>
+                      <div className="flex items-center gap-1.5 text-zinc-500">
+                        <span className="w-16">Backend:</span>
+                        <span className="text-emerald-700 dark:text-emerald-400 font-medium">{project.backendTech.join(', ')}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Footer with Tech Badges & Detail Button */}
-                <div className="px-6 pb-6 pt-3 border-t border-zinc-800/60 flex items-center justify-between">
+                <div className="px-6 pb-6 pt-3 border-t border-zinc-100 dark:border-zinc-800/60 flex items-center justify-between">
                   <div className="flex flex-wrap gap-1.5">
                     {project.technologies.slice(0, 4).map((t) => (
                       <span
                         key={t}
-                        className="px-2 py-0.5 text-[11px] font-mono bg-zinc-800 text-zinc-300 rounded-md border border-zinc-700/60"
+                        className="px-2 py-0.5 text-[11px] font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-md border border-zinc-200 dark:border-zinc-700/60"
                       >
                         {t}
                       </span>
                     ))}
                     {project.technologies.length > 4 && (
-                      <span className="px-1.5 py-0.5 text-[11px] font-mono text-zinc-500">
+                      <span className="px-1.5 py-0.5 text-[11px] font-mono text-zinc-400 dark:text-zinc-500">
                         +{project.technologies.length - 4}
                       </span>
                     )}
@@ -346,7 +347,7 @@ export default function Projects() {
 
                   <button
                     onClick={() => setActiveProject(project)}
-                    className="inline-flex items-center gap-1 text-xs font-medium text-sky-400 hover:text-sky-300 cursor-pointer ml-2 whitespace-nowrap"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 cursor-pointer ml-2 whitespace-nowrap"
                   >
                     <span>Detail</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -362,35 +363,35 @@ export default function Projects() {
       {/* Project Details Modal with Full Screenshot View */}
       {activeProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 dark:bg-black/85 backdrop-blur-md overflow-y-auto"
           onClick={() => setActiveProject(null)}
         >
           <div
-            className="w-full max-w-2xl bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8 space-y-5 text-zinc-300 shadow-2xl my-8 max-h-[90vh] overflow-y-auto"
+            className="w-full max-w-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 sm:p-8 space-y-5 text-zinc-700 dark:text-zinc-300 shadow-2xl my-8 max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-start justify-between pb-3 border-b border-zinc-800">
+            <div className="flex items-start justify-between pb-3 border-b border-zinc-200 dark:border-zinc-800">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-sky-950/60 text-sky-300 text-xs font-mono border border-sky-800/60">
-                    <Globe className="w-3 h-3 text-sky-400" />
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 text-xs font-mono border border-sky-200 dark:border-sky-800/60">
+                    <Globe className="w-3 h-3 text-sky-500 dark:text-sky-400" />
                     <span>Aplikasi Berbasis Web</span>
                   </span>
-                  <span className="text-xs font-mono text-zinc-400">
+                  <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
                     · {activeProject.category}
                   </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-zinc-100">
+                <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
                   {activeProject.title}
                 </h3>
-                <p className="text-xs text-zinc-400 font-mono mt-0.5">
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 font-mono mt-0.5">
                   {activeProject.organization} · Peran: {activeProject.role}
                 </p>
               </div>
               <button
                 onClick={() => setActiveProject(null)}
-                className="p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 cursor-pointer"
+                className="p-1.5 text-zinc-400 hover:text-zinc-900 dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer"
                 aria-label="Close"
               >
                 <X className="w-5 h-5" />
@@ -399,7 +400,7 @@ export default function Projects() {
 
             {/* High-Res Screenshot Display */}
             {activeProject.image && (
-              <div className="rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-md">
+              <div className="rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-950 shadow-md">
                 <img
                   src={activeProject.image}
                   alt={activeProject.title}
@@ -408,14 +409,14 @@ export default function Projects() {
               </div>
             )}
 
-            <p className="text-sm text-zinc-300 leading-relaxed">
+            <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
               {activeProject.description}
             </p>
 
             {/* Tech Stack Breakdown (Frontend & Backend) */}
-            <div className="grid sm:grid-cols-2 gap-3 p-4 rounded-2xl bg-zinc-950/60 border border-zinc-800">
+            <div className="grid sm:grid-cols-2 gap-3 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200 dark:border-zinc-800">
               <div className="space-y-1.5">
-                <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-sky-400">
+                <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-sky-600 dark:text-sky-400">
                   <Code2 className="w-3.5 h-3.5" />
                   <span>Frontend Web</span>
                 </div>
@@ -423,7 +424,7 @@ export default function Projects() {
                   {activeProject.frontendTech.map((f) => (
                     <span
                       key={f}
-                      className="px-2 py-0.5 text-xs font-mono bg-zinc-900 text-zinc-200 rounded border border-zinc-800"
+                      className="px-2 py-0.5 text-xs font-mono bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 rounded border border-zinc-200 dark:border-zinc-800 shadow-xs"
                     >
                       {f}
                     </span>
@@ -432,7 +433,7 @@ export default function Projects() {
               </div>
 
               <div className="space-y-1.5">
-                <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-emerald-400">
+                <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400">
                   <Server className="w-3.5 h-3.5" />
                   <span>Backend &amp; Database</span>
                 </div>
@@ -440,7 +441,7 @@ export default function Projects() {
                   {activeProject.backendTech.map((b) => (
                     <span
                       key={b}
-                      className="px-2 py-0.5 text-xs font-mono bg-zinc-900 text-emerald-300 rounded border border-zinc-800"
+                      className="px-2 py-0.5 text-xs font-mono bg-white dark:bg-zinc-900 text-emerald-700 dark:text-emerald-300 rounded border border-zinc-200 dark:border-zinc-800 shadow-xs"
                     >
                       {b}
                     </span>
@@ -451,13 +452,13 @@ export default function Projects() {
 
             {/* Features / Details */}
             <div className="space-y-2">
-              <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider block">
+              <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block">
                 Poin Pekerjaan &amp; Fitur Utama
               </span>
-              <ul className="space-y-1.5 text-xs text-zinc-400">
+              <ul className="space-y-1.5 text-xs text-zinc-600 dark:text-zinc-400">
                 {activeProject.details.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="text-sky-400 font-bold">•</span>
+                    <span className="text-sky-500 font-bold">•</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -465,14 +466,14 @@ export default function Projects() {
             </div>
 
             <div>
-              <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider block mb-2">
+              <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block mb-2">
                 Seluruh Teknologi yang Digunakan
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {activeProject.technologies.map((t) => (
                   <span
                     key={t}
-                    className="px-2.5 py-1 text-xs font-mono bg-zinc-800 text-zinc-300 rounded-md border border-zinc-700/60"
+                    className="px-2.5 py-1 text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-300 rounded-md border border-zinc-200 dark:border-zinc-700/60"
                   >
                     {t}
                   </span>
@@ -480,20 +481,20 @@ export default function Projects() {
               </div>
             </div>
 
-            <div className="pt-4 border-t border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <a
-                href={`https://wa.me/62895324953916?text=${encodeURIComponent(`Halo Alvian, saya tertarik mendiskusikan proyek "${activeProject.title}" yang saya lihat di portofolio Anda.`)}`}
+                href="https://www.linkedin.com/in/alvian-eka-pratama-19288b2b8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-zinc-950 bg-emerald-400 hover:bg-emerald-300 rounded-full transition-colors shadow-sm"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-[#0077B5] hover:bg-[#006097] rounded-full transition-colors shadow-sm"
               >
-                <MessageCircle className="w-4 h-4" />
-                <span>Diskusikan Proyek via WhatsApp</span>
+                <LinkedinIcon className="w-3.5 h-3.5 fill-current" />
+                <span>Hubungi via LinkedIn</span>
               </a>
 
               <button
                 onClick={() => setActiveProject(null)}
-                className="px-5 py-2.5 text-xs font-medium text-zinc-300 bg-zinc-800 hover:bg-zinc-700 rounded-full transition-colors cursor-pointer text-center"
+                className="px-5 py-2 text-xs font-medium text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-full transition-colors cursor-pointer text-center"
               >
                 Tutup
               </button>

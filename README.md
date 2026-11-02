@@ -36,8 +36,6 @@ Dibuat secara autentik, bersih, bersahabat, dan bebas dari istilah buatan AI yan
 
 - **Nama**: Alvian Eka Pratama
 - **Universitas**: Universitas Mercu Buana Jakarta (Informatika)
-- **WhatsApp / Telepon**: [0895324953916](https://wa.me/62895324953916)
-- **Email**: [alvianekapratama@gmail.com](mailto:alvianekapratama@gmail.com)
 - **LinkedIn**: [linkedin.com/in/alvian-eka-pratama-19288b2b8](https://www.linkedin.com/in/alvian-eka-pratama-19288b2b8)
 
 ---

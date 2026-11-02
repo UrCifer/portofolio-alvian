@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#0c0d0e] text-zinc-100 antialiased selection:bg-sky-500/20 selection:text-white">
+    <div className="min-h-screen bg-[#fafafa] dark:bg-[#0c0d0e] text-zinc-900 dark:text-zinc-100 antialiased selection:bg-sky-500/20 selection:text-white transition-colors duration-200">
       <Navbar />
       <main>
         <Hero />
