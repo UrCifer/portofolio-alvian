@@ -1,12 +1,28 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 
-export function useScrollReveal(threshold = 0.15) {
+export function useScrollReveal(threshold = 0.02) {
   const ref = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(() => {
+    // Pada layar HP / mobile, aktifkan langsung sejak render pertama agar tidak kosong
+    if (typeof window !== 'undefined') {
+      return (
+        window.innerWidth <= 768 ||
+        !('IntersectionObserver' in window) ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      )
+    }
+    return false
+  })
 
   useEffect(() => {
+    if (isVisible) return
+
     const el = ref.current
     if (!el) return
+
+    if (!('IntersectionObserver' in window)) {
+      return
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -15,12 +31,21 @@ export function useScrollReveal(threshold = 0.15) {
           observer.unobserve(el)
         }
       },
-      { threshold, rootMargin: '0px 0px -60px 0px' }
+      { threshold: 0.02, rootMargin: '50px 0px 0px 0px' }
     )
 
     observer.observe(el)
-    return () => observer.disconnect()
-  }, [threshold])
+
+    // Failsafe timer: pastikan konten selalu tampil maksimal setelah 500ms
+    const timer = setTimeout(() => {
+      setIsVisible(true)
+    }, 500)
+
+    return () => {
+      observer.disconnect()
+      clearTimeout(timer)
+    }
+  }, [isVisible, threshold])
 
   return { ref, isVisible }
 }
@@ -29,6 +54,8 @@ export function useActiveSection(sectionIds: string[]) {
   const [active, setActive] = useState('')
 
   useEffect(() => {
+    if (!('IntersectionObserver' in window)) return
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -37,7 +64,7 @@ export function useActiveSection(sectionIds: string[]) {
           }
         }
       },
-      { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' }
+      { threshold: 0.1, rootMargin: '-80px 0px -40% 0px' }
     )
 
     for (const id of sectionIds) {

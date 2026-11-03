@@ -16,7 +16,8 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  html.dark, html:not(.light) {
+  html.dark,
+  html:not(.light) {
     background-color: #0c0d0e;
     color: #f1f5f9;
     color-scheme: dark;
@@ -43,4 +44,21 @@
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Keamanan tampilan mobile & aksesibilitas: jangan sembunyikan konten di HP */
+@media (max-width: 768px) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
